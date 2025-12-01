@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BunnyRose Cosmetic</title>
+<link rel="stylesheet" href="BODY.css">
+</head>
+<body>
+
+<h1 class="judul">BUNNYROSE COSMETIC</h1>
+
+<!-- ==== LOGIN & REGISTER ==== -->
+<div class="center-container">
+
+    <div id="loginForm" class="card big-card">
+        <h2>Login</h2>
+        <input type="text" id="loginUsername" placeholder="Username">
+        <input type="password" id="loginPassword" placeholder="Password">
+        <button onclick="login()">Login</button>
+        <p>Belum punya akun? <span onclick="showRegister()" class="link">Daftar</span></p>
+    </div>
+
+    <div id="registerForm" class="card big-card" style="display:none;">
+        <h2>Daftar</h2>
+        <input type="text" id="registerName" placeholder="Nama">
+        <input type="text" id="registerUsername" placeholder="Username">
+        <input type="password" id="registerPassword" placeholder="Password">
+        <button onclick="register()">Daftar</button>
+        <p>Sudah punya akun? <span onclick="showLogin()" class="link">Login</span></p>
+    </div>
+
+</div>
+
+<!-- ==== HALAMAN APLIKASI ==== -->
+<div id="mainApp" style="display:none;" class="center-container">
+
+    <!-- USER CARD -->
+    <div class="card user-card">
+        <p>Halo, <span id="userName"></span>!</p>
+        <button onclick="logout()">Logout</button>
+    </div>
+
+    <!-- MEMBER CARD -->
+    <div class="card member-card">
+        <h3>Kartu Member</h3>
+        <p>Nama: <span id="memberName"></span></p>
+        <p>Poin: <span id="memberPoints">0</span></p>
+    </div>
+
+    <!-- ==== NAVBAR ==== -->
+   <nav class="nav-menu">
+    <button onclick="showPage('home'); highlightPage(this)">Semua Produk</button>
+    <button onclick="showPage('lipstick'); highlightPage(this)">Lipstick</button>
+    <button onclick="showPage('foundation'); highlightPage(this)">Foundation</button>
+    <button onclick="showPage('skincare'); highlightPage(this)">Skincare</button>
+    <button onclick="showPage('aksesoris'); highlightPage(this)">Aksesoris</button>
+</nav>
+
+
+
+    <!-- ==== HALAMAN PRODUK ==== -->
+    <div id="home" class="page">
+        <h2 class="daftar-barang-title">Semua Produk</h2>
+        <div id="products" class="product-grid"></div>
+    </div>
+
+    <div id="lipstick" class="page" style="display:none;">
+        <h2 class="daftar-barang-title">Lipstick</h2>
+        <div id="lipstickProducts" class="product-grid"></div>
+    </div>
+
+    <div id="foundation" class="page" style="display:none;">
+        <h2 class="daftar-barang-title">Foundation</h2>
+        <div id="foundationProducts" class="product-grid"></div>
+    </div>
+
+    <div id="skincare" class="page" style="display:none;">
+        <h2 class="daftar-barang-title">Skincare</h2>
+        <div id="skincareProducts" class="product-grid"></div>
+    </div>
+
+    <div id="aksesoris" class="page" style="display:none;">
+    <h2 class="daftar-barang-title">Aksesoris</h2>
+    <div id="aksesorisProducts" class="product-grid"></div>
+    </div>
+
+
+    <!-- KERANJANG -->
+    <div class="cart card">
+        <h3>Keranjang Belanja</h3>
+        <div id="cartItems"></div>
+        <p>Total: Rp <span id="total">0</span></p>
+        <button onclick="checkout()">Checkout</button>
+    </div>
+
+</div>
+
+<script src="TAMPILAN.js"></script>
+</body>
